@@ -16,7 +16,7 @@ const Post = props => {
   const updateLikes = ()=>{
     setLikes(likes + 1);
   }
-
+  console.log(props);
   return (
     <div className="post-border">
       <PostHeader
@@ -36,7 +36,9 @@ const Post = props => {
       <CommentSection
         postId={props.post.imageUrl}
         comments={props.post.comments}
+        timeStamp={props.post.timestamp}
       />
+      
     </div>
   );
 };
