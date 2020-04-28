@@ -6,19 +6,19 @@ import "./Comment.css";
 
 const CommentSection = props => {
   // Add state for the comments
-  const [comments, changeComment] = useState();
-  //const [timeStamp, setTimeStamp] = useState(props.timeStamp);
-  //console.log(props);
+  const [comments, setComments] = useState(props.comments);
+  
   return (
     <div>
-      {props.comments.map(item=>{
-        return <Comment comment={item} />;
+      {/* map through the comments data and return the Comment component */}
+      {comments.map((comment, i) => {
+        return <Comment key={comment.username} comment={comment} />;
       })}
       
      <span className="time-stamp">{props.timeStamp}</span>
       
       
-      <CommentInput changeComment={changeComment}/>
+     <CommentInput comments={comments} setComments={setComments} />
       
     </div>
   );

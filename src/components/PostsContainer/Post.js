@@ -16,7 +16,7 @@ const Post = props => {
   const updateLikes = ()=>{
     setLikes(likes + 1);
   }
-  console.log(props);
+  
   return (
     <div className="post-border">
       <PostHeader

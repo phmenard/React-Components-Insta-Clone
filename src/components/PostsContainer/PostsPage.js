@@ -10,8 +10,8 @@ const PostsPage = () => {
   // set up state for your data
   return (
     <div className="posts-container-wrapper">
-      {PostData.map(postItem=>{
-        return <Post post={postItem} />;
+      {PostData.map((postItem, i) => {
+        return <Post key={postItem.username} post={postItem} />;
       })}
     </div>   
   );
